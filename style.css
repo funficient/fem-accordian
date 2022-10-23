@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root { 
+    --color-primary-text-blue: hsl(238, 29%, 16%);
+    --color-primary-text-red: hsl(14, 88%, 65%);
+    --color-neutral-text-dark: hsl(237, 12%, 33%);
+    --color-neutral-text-light: hsl(240, 6%, 50%);
+    --color-neutral-divider: hsl(240, 5%, 91%);
+    --color-background-gradient: linear-gradient (hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+  
+  /* Set core root defaults */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  
+  /* Set core body defaults */
+  
+  body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient (#af67e9, #6565e7);
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture, 
+  svg {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+     scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /*----- Mobile first -----*/
+ 
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 65vh;
+    width: 90%;
+    /*margin: auto;*/
+    position: relative;
+    
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 3rem;
+   /* margin: auto;*/
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    /*height: 100%;*/
+}
+
+.sedan {
+  background: var(--color-primary-sedan);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.suv {
+  background: var(--color-primary-suv);
+}
+
+.luxury {
+  background: var(--color--primary-luxury);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    line-height: 1.5rem;
+    padding: 3rem 0;
+    font-family: 'Big Shoulders Display', cursive;
+    color: var(--color-neutral-text-grey);
+    text-transform: uppercase;
+  }
+  
+  p {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    color: var(--color-neutral-text-white);
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    margin-bottom: 6em;
+  }
+  
+  /*----- Tablet sizing -----*/
+  @media (min-width: 785px) {
+
+    .container {
+      flex-direction: row;
+      width: 80%;
+    }
+
+    .sedan {
+    
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 10px;
+    }
+    
+   .luxury {
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 10px;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.7rem;
+    }
+  
+  }
+  /*----- Desktop styling -----*/
+
+@media (min-width: 1440px) {
+  .container {
+    flex-direction: row;
+    width: 60%;
+    height: 60vh;
+  }
+
+
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
+}
+
+
+ /*-- Utility classes --*/
+  
+ button { 
+  cursor: pointer;
+  background: var(--color-neutral-text-grey);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 3em;
+  margin-top: auto;
+}
+
+
+.sedan button {
+  color: var(--color-primary-sedan);
+}
+
+.suv button {
+  color: var(--color-primary-suv);
+}
+
+.luxury button {
+  color: var(--color--primary-luxury);
+}
+
+button:hover {
+  border: 2px solid var(--color-neutral-text-white);
+  background-color: transparent;
+  color: var(--color-neutral-text-white);
+}
+
+
+
+
