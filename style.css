@@ -47,10 +47,7 @@
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient (#af67e9, #6565e7);
+    background-color: linear-gradient (#af67e9, #6565e7);
   }
   
   /* A elements that don't have a class get default styles */
@@ -84,24 +81,25 @@
   
   /*----- Mobile first -----*/
  
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 65vh;
-    width: 90%;
-    /*margin: auto;*/
-    position: relative;
-    
-  }
-
   main {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    width: 100vw;
   }
 
+  .background {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*margin: auto;*/
+    position: relative;
+    
+    border: 2px solid red;
+    
+  }
 
   .card {
     display: flex;
@@ -112,37 +110,21 @@
    /* margin: auto;*/
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     /*height: 100%;*/
+    text-align: center;
 }
 
-.sedan {
-  background: var(--color-primary-sedan);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
 
-.suv {
-  background: var(--color-primary-suv);
-}
-
-.luxury {
-  background: var(--color--primary-luxury);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
 
 h1 {
     font-size: 2.2rem;
+    font-weight: 700;
     line-height: 1.5rem;
     padding: 3rem 0;
-    font-family: 'Big Shoulders Display', cursive;
-    color: var(--color-neutral-text-grey);
     text-transform: uppercase;
   }
   
   p {
-    font-family: 'Lexend Deca', sans-serif;
-    font-weight: 400;
-    color: var(--color-neutral-text-white);
+
     font-size: 0.9rem;
     line-height: 1.4rem;
     margin-bottom: 6em;
@@ -153,18 +135,7 @@ h1 {
 
     .container {
       flex-direction: row;
-      width: 80%;
-    }
-
-    .sedan {
-    
-      border-top-right-radius: 0;
-      border-bottom-left-radius: 10px;
-    }
-    
-   .luxury {
-      border-bottom-left-radius: 0;
-      border-top-right-radius: 10px;
+      
     }
   
     h1 {
@@ -178,8 +149,6 @@ h1 {
 @media (min-width: 1440px) {
   .container {
     flex-direction: row;
-    width: 60%;
-    height: 60vh;
   }
 
 
@@ -205,18 +174,6 @@ h1 {
   margin-top: auto;
 }
 
-
-.sedan button {
-  color: var(--color-primary-sedan);
-}
-
-.suv button {
-  color: var(--color-primary-suv);
-}
-
-.luxury button {
-  color: var(--color--primary-luxury);
-}
 
 button:hover {
   border: 2px solid var(--color-neutral-text-white);
