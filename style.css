@@ -40,16 +40,7 @@
   html:focus-within {
     scroll-behavior: smooth;
   }
-  
-  /* Set core body defaults */
-  
-  body {
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-    padding: 1rem;
-    background-color: linear-gradient (#af67e9, #6565e7);
-  }
-  
+   
   /* A elements that don't have a class get default styles */
   a:not([class]) {
     text-decoration-skip-ink: auto;
@@ -81,26 +72,50 @@
   
   /*----- Mobile first -----*/
  
+  body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background-color: #7b64e8;
+    position: relative;
+    padding: 3em 0;
+  }
+ 
   main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
+    position: absolute; 
+    max-width: 800px;
+    width: 90%;
+    background-color: #fff;
+    margin: 3em 0;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   }
 
-  .background {
+  .illustration {
     display: flex;
     flex-direction: column;
-    display: flex;
     align-items: center;
     justify-content: center;
-    /*margin: auto;*/
-    position: relative;
-    
-    border: 2px solid red;
-    
+    margin: -3em 0 0 -1em;
   }
 
+  #shadow {
+    margin: -3.5em 0 0 -1em;
+    z-index: 0;
+  }
+
+  #box {
+    display: none;
+    z-index: 1;
+  }
+
+  #woman {
+    margin: -7em 0 3em;
+    z-index: 2;
+
+  }
+/*--faq-section--*/
   .card {
     display: flex;
     flex-direction: column;
@@ -112,11 +127,54 @@
     /*height: 100%;*/
     text-align: center;
 }
+/*--faq-row--*/
+.row {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: auto;
+  border-top: 0.1px solid var(--color-neutral-divider);
+}
 
+.row:nth-child(2) {
+  border-top: none;
+}
 
+.row:nth-child(6) {
+  border-bottom: 0.1px solid var(--color-neutral-divider);
+  margin-bottom: 2em;
+}
+
+/*--faq-btn--*/
+.select {
+
+}
+/*--title--*/
+.question {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  z-index: 4;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.arrow {
+
+}
+/*--faq-response--*/
+.answer {
+  width: 100%;
+  text-align: left;
+  transition: all 0.5s ease-in-out;
+}
 
 h1 {
-    font-size: 2.2rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+    font-size: 2.2em;
     font-weight: 700;
     line-height: 1.5rem;
     padding: 3rem 0;
@@ -125,9 +183,11 @@ h1 {
   
   p {
 
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-    margin-bottom: 6em;
+    font-size: 1em;
+    line-height: 1.4em;
+    margin-bottom: 3em;
+    padding: 1em 0;
+    
   }
   
   /*----- Tablet sizing -----*/

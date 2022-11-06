@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"name": "fem-accordian",
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "fem-accordian"
+  }
+}
