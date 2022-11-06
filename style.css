@@ -24,10 +24,11 @@
     box-sizing: border-box;
   }
   
-  * {
+  *, body, main {
     margin: 0;
     padding: 0;
     font: inherit;
+    box-sizing: border-box;
   }
   
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -77,41 +78,41 @@
     line-height: 1.5;
     background-color: #7b64e8;
     position: relative;
-    padding: 3em 0;
   }
  
   main {
-    position: absolute; 
+    position: absolute;  
     max-width: 800px;
     width: 90%;
     background-color: #fff;
-    margin: 3em 0;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, 10%);
     border-radius: 1rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 3em 0;
   }
 
-  .illustration {
+  main .illustration {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: -3em 0 0 -1em;
+    margin-top: -7em;
+    margin-left: -1em;
   }
 
-  #shadow {
-    margin: -3.5em 0 0 -1em;
+  main .illustration #shadow {
+    margin-top: -5.5em;
+    margin-left: 1em;
     z-index: 0;
   }
 
-  #box {
+  main .illustration #box {
     display: none;
     z-index: 1;
   }
 
-  #woman {
-    margin: -7em 0 3em;
+  main .illustration #woman {
     z-index: 2;
 
   }
@@ -120,12 +121,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: relative;
-    padding: 3rem;
+    /* position: relative; */
+    /* padding: 3rem; */
    /* margin: auto;*/
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     /*height: 100%;*/
-    text-align: center;
+    /* text-align: center; */
 }
 /*--faq-row--*/
 .row {
@@ -142,12 +143,21 @@
 
 .row:nth-child(6) {
   border-bottom: 0.1px solid var(--color-neutral-divider);
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 /*--faq-btn--*/
 .select {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  z-index: 4;
+}
 
+.select img {
+  width: 4%;
+  transform: 0.5s ease;
 }
 /*--title--*/
 .question {
@@ -158,6 +168,7 @@
   z-index: 4;
   font-weight: 700;
   font-size: 1.2em;
+  margin-top: 2em;
 }
 
 .arrow {
@@ -168,6 +179,12 @@
   width: 100%;
   text-align: left;
   transition: all 0.5s ease-in-out;
+  color: var(--color-neutral-text-light);
+  font-weight: 500;
+  max-height: 0px;
+  opacity: 0;
+  margin: 0.5em;
+  margin-left: 0;
 }
 
 h1 {
@@ -179,6 +196,11 @@ h1 {
     line-height: 1.5rem;
     padding: 3rem 0;
     text-transform: uppercase;
+  }
+
+  h2 {
+    width: 100%;
+    font-weight: 500;
   }
   
   p {
@@ -207,39 +229,129 @@ h1 {
   /*----- Desktop styling -----*/
 
 @media (min-width: 1440px) {
-  .container {
-    flex-direction: row;
+  body {
+    position: inherit;
   }
 
+  main {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+ 
+
+  main .illustration {
+    position: relative;
+    width: 50%;
+    margin-top: 0em;
+    margin-left: -5em;
+    margin-right: 5em;
+  }
+
+  main .illustration #shadow {
+    position: absolute;
+    margin-top: 0em;
+    margin-left: 1em;
+    width: 100%;
+  }
+
+  main .illustration #box {
+    display: block;
+    position: absolute;
+    top: 9em;
+    left: -2em;
+    z-index: 4;
+    
+  }
+
+  main .illustration #woman {
+    position: absolute;
+    width: 100%;
+    
+
+  }
+/*--faq-section--*/
+  .card {
+    width: 50%;
+}
+/*--faq-row--*/
+.row {
+  
+  width: 80%;
+  
+}
+
+/*--faq-btn--*/
+.select {
+  cursor: pointer;
+}
+
+.select:hover {
+  color: var(--color-neutral-text-dark);
+}
 
 
+/*--title--*/
+.question {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  z-index: 4;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-top: 2em;
+}
+
+.arrow {
+
+}
+/*--faq-response--*/
+.answer {
+  width: 100%;
+  text-align: left;
+  transition: all 0.5s ease-in-out;
+  color: var(--color-neutral-text-light);
+  font-weight: 500;
+  max-height: 0px;
+  opacity: 0;
+  margin: 0.5em;
+  margin-left: 0;
+}
+
+h1 {
+  display: block;
+  width: 100%;
+  text-align: center;
+    font-size: 2.2em;
+    font-weight: 700;
+    line-height: 1.5rem;
+    padding: 3rem 0;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    width: 100%;
+    font-weight: 500;
+  }
+  
   p {
-    font-size: 1rem;
-    line-height: 1.7rem;
+
+    font-size: 1em;
+    line-height: 1.4em;
+    margin-bottom: 3em;
+    padding: 1em 0;
+    
   }
 }
 
 
  /*-- Utility classes --*/
   
- button { 
-  cursor: pointer;
-  background: var(--color-neutral-text-grey);
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 3em;
-  margin-top: auto;
-}
-
-
-button:hover {
-  border: 2px solid var(--color-neutral-text-white);
-  background-color: transparent;
-  color: var(--color-neutral-text-white);
-}
+ 
 
 
 
